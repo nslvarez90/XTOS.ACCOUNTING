@@ -1,0 +1,42 @@
+﻿@page "/register"
+
+@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@using MudBlazor
+
+
+
+<MudContainer Class="mt-16" MaxWidth="MaxWidth.Medium">
+    <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">Register</MudText>
+    <MudGrid Justify="Justify.Center" Spacing="12" Class="mt-5">
+        <MudItem sm="6" xs="12">
+            <MudText Typo="Typo.h5" GutterBottom="true">Please fill your info</MudText>
+            <MudGrid>
+                <MudItem xs="12" sm="12">
+                        <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                            <MudTextField T="string" Label="Username" Required="true" RequiredError="User name is required!" />
+                            <MudTextField T="string" Label="Email" Required="true" RequiredError="Email is required!"
+                                          Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" />
+                            <MudTextField T="string" Label="Password" HelperText="Choose a strong password" @ref="pwField1"
+                                          InputType="InputType.Password"
+                                          Validation="@(new Func<string, IEnumerable<string>>(PasswordStrength))" Required="true"
+                                          RequiredError="Password is required!" />
+                            <MudTextField T="string"
+                                          Label="Password" HelperText="Repeat the password" InputType="InputType.Password"
+                                          Validation="@(new Func<string, string>(PasswordMatch))" />
+                            <div class="d-flex align-center justify-space-between">
+                                <MudButton Variant="Variant.Filled" Color="Color.Primary" Disabled="@(!success)" Class="ml-auto">Register</MudButton>
+                            </div>
+                        </MudForm>
+                        <MudItem xs="12" Class="d-flex justify-content-start">
+                            <MudText Typo="Typo.inherit" Align="Align.Left" GutterBottom="true">
+                                <MudLink Href="/loginClassic" Underline="Underline.Always">Login Classic</MudLink>
+                                &nbsp;| &nbsp;
+                                <MudLink Href="/loginToken" Underline="Underline.Always">Login Token</MudLink>
+                            </MudText>
+                        </MudItem>
+                </MudItem>
+            </MudGrid>
+        </MudItem>
+    </MudGrid>
+</MudContainer>

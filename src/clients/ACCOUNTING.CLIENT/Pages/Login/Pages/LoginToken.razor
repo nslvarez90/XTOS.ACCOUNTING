@@ -1,0 +1,65 @@
+﻿@page "/loginToken"
+
+@using MudBlazor
+
+@using FluentValidation
+@using Severity = MudBlazor.Severity
+@inject ISnackbar Snackbar
+
+<MudContainer Class="mt-16" MaxWidth="MaxWidth.Medium">
+    <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">Login</MudText>
+    <MudGrid Justify="Justify.Center" Spacing="12" Class="mt-5">
+        <MudItem sm="6" xs="12">
+            <MudText Typo="Typo.h5" GutterBottom="true">Please select your Token</MudText>
+            <MudGrid>
+                <MudItem xs="12" Class="d-flex justify-content-center mt-3">
+                    <MudFileUpload @ref="@_fileUpload"
+                                   T="IBrowserFile"
+                                   For="@(() => model.File)"
+                                   @bind-Files="model.File"
+                                   OnFilesChanged="UploadFiles"
+                                   SuppressOnChangeWhenInvalid="SuppressOnChangeWhenInvalid">
+                        <ActivatorContent>
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Secondary"
+                                       Size="Size.Large"
+                                       StartIcon="@Icons.Material.Filled.CloudUpload">
+                                @textInput
+                            </MudButton>
+                        </ActivatorContent>
+                    </MudFileUpload>
+                </MudItem>
+                <MudItem xs="12" Class="d-flex justify-content-start">
+                    <MudGrid Justify="Justify.Center">
+                        <MudItem sm="6" xs="12" Class="d-flex justify-content-start">
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Dark"
+                                       Size="Size.Large"
+                                       StartIcon="@Icons.Material.Filled.Clear"
+                                       OnClick="@ClearAsync">
+                                Clear
+                            </MudButton>
+                        </MudItem>
+                        <MudItem sm="6" xs="12" Class="d-flex justify-content-end">
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       Size="Size.Large" >
+                                Login
+                            </MudButton>
+                        </MudItem>
+                    </MudGrid>
+                </MudItem>
+                <MudItem xs="12" Class="d-flex justify-content-start">
+                    <MudText Typo="Typo.inherit" Align="Align.Left" GutterBottom="true">
+                        <MudLink Href="/loginClassic" Underline="Underline.Always">Login Classic</MudLink>
+                        &nbsp;| &nbsp;
+                        <MudLink Href="/register" Underline="Underline.Always">Register</MudLink>
+                    </MudText>
+                </MudItem>
+            </MudGrid>
+        </MudItem>
+    </MudGrid>
+</MudContainer>
+
+
+

@@ -1,0 +1,118 @@
+﻿@using MudBlazor
+@inject ISnackbar Snackbar
+@using ACCOUNTING.CORE.Models
+
+<MudDialog>
+    <DialogContent>
+
+        <MudDataGrid T="DuplicateInfoDTO" FixedHeader HorizontalScrollbar="true" MultiSelection="true" Items="@agentsDuplicates" SortMode="@SortMode.Multiple" Filterable="true" QuickFilter="@QuickFilter" SelectedItemsChanged="@SelectedItemsChanged" Class="w-100">
+            <ToolBarContent>
+                <MudSpacer />
+                <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Immediate="true"
+                              AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <Columns >
+                <SelectColumn T="DuplicateInfoDTO" />
+                <PropertyColumn Property="x => x.MainAgentName" Title="Principal Agent"  />
+                <PropertyColumn Property="x => x.DuplicateAgentName" Title="Agent Matches" />
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <MudText Class="text-center" Typo="Typo.body2"> IP Matches </MudText>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Style="width: 120px;" Row>
+                            <div class="row w-100 ">
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Ips.TotalMatch}")  </MudText>
+                                    <MudTooltip Text="@context.Item.Ips.RelatedInfo">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Info" IconSize="Size.Small" Color="Color.Info" />
+                                    </MudTooltip>
+                                </div>
+                                <div class="col-6  d-flex d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Ips.MatchPercent} %")</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <MudText Class="text-center" Typo="Typo.body2"> Repeated Passwords </MudText>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Style="width: 120px;" Row>
+                            <div class="row w-100">
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Password.TotalMatch}") </MudText>
+                                    <MudTooltip Text="@context.Item.Password.RelatedInfo">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Info" Color="Color.Info" />
+                                    </MudTooltip>
+                                </div>
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Password.MatchPercent} %")</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn CellStyle="width: 150px;">
+                    <HeaderTemplate>
+                        <MudText Class="text-center" Typo="Typo.body2"> Similar Bets </MudText>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Style="width: 120px;" Row>
+                            <div class="row w-100">
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Bets.TotalMatch}") </MudText>
+                                    <MudTooltip Text="@context.Item.Bets.RelatedInfo">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Info" Color="Color.Info" />
+                                    </MudTooltip>
+                                </div>
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Bets.MatchPercent} %")</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn CellStyle="width: 150px;">
+                    <HeaderTemplate>
+                        <MudText Class="text-center" Typo="Typo.body2"> Repetitive Hours	 </MudText>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Style="width: 120px;" Row>
+                            <div class="row w-100">
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Hours.TotalMatch}") </MudText>
+                                    <MudTooltip Text="@context.Item.Hours.RelatedInfo">
+                                        <MudIconButton Icon="@Icons.Material.Filled.Info" Color="Color.Info" />
+                                    </MudTooltip>
+                                </div>
+                                <div class="col-6  d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Hours.MatchPercent} %")</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn StickyRight="true" >
+                    <HeaderTemplate>
+                        <MudText Class="text-center" Typo="Typo.body2"> Actions	 </MudText>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack  Row>
+                            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Save" Color="Color.Info" Size="Size.Small">Report</MudButton>
+                            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Delete" IconColor="Color.Secondary" Size="Size.Large">Remove</MudButton>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="DuplicateInfoDTO" />
+            </PagerContent>
+        </MudDataGrid>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Primary" OnClick="Close">Ok</MudButton>
+    </DialogActions>
+</MudDialog>

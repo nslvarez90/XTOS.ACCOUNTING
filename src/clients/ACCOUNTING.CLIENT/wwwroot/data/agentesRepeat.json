@@ -1,0 +1,340 @@
+[
+  {
+    "IdAgentMain": 1,
+    "MainAgentName": "Agente 1",
+    "IdAgentDuplicate": 2,
+    "DuplicateAgentName": "Agente 2",
+    "Ips": {
+      "TotalMatch": 5,
+      "MatchPercent": 0.8,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 3,
+    "MainAgentName": "Agente 3",
+    "IdAgentDuplicate": 4,
+    "DuplicateAgentName": "Agente 4",
+    "Ips": {
+      "TotalMatch": 4,
+      "MatchPercent": 0.7,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 3,
+    "MainAgentName": "Agente 3",
+    "IdAgentDuplicate": 4,
+    "DuplicateAgentName": "Agente 4",
+    "Ips": {
+      "TotalMatch": 4,
+      "MatchPercent": 0.7,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 3,
+    "MainAgentName": "Agente 3",
+    "IdAgentDuplicate": 4,
+    "DuplicateAgentName": "Agente 4",
+    "Ips": {
+      "TotalMatch": 4,
+      "MatchPercent": 0.7,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 3,
+    "MainAgentName": "Agente 3",
+    "IdAgentDuplicate": 4,
+    "DuplicateAgentName": "Agente 4",
+    "Ips": {
+      "TotalMatch": 4,
+      "MatchPercent": 0.7,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 5,
+    "MainAgentName": "Agente 5",
+    "IdAgentDuplicate": 6,
+    "DuplicateAgentName": "Agente 6",
+    "Ips": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.5,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 7,
+    "MainAgentName": "Agente 7",
+    "IdAgentDuplicate": 8,
+    "DuplicateAgentName": "Agente 8",
+    "Ips": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 9,
+    "MainAgentName": "Agente 9",
+    "IdAgentDuplicate": 10,
+    "DuplicateAgentName": "Agente 10",
+    "Ips": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 11,
+    "MainAgentName": "Agente 11",
+    "IdAgentDuplicate": 12,
+    "DuplicateAgentName": "Agente 12",
+    "Ips": {
+      "TotalMatch": 4,
+      "MatchPercent": 0.7,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 13,
+    "MainAgentName": "Agente 13",
+    "IdAgentDuplicate": 14,
+    "DuplicateAgentName": "Agente 14",
+    "Ips": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.5,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 15,
+    "MainAgentName": "Agente 15",
+    "IdAgentDuplicate": 16,
+    "DuplicateAgentName": "Agente 16",
+    "Ips": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 17,
+    "MainAgentName": "Agente 17",
+    "IdAgentDuplicate": 18,
+    "DuplicateAgentName": "Agente 18",
+    "Ips": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.6,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  },
+  {
+    "IdAgentMain": 19,
+    "MainAgentName": "Agente 19",
+    "IdAgentDuplicate": 20,
+    "DuplicateAgentName": "Agente 20",
+    "Ips": {
+      "TotalMatch": 3,
+      "MatchPercent": 0.5,
+      "RelatedInfo": "Direcciones IP coincidentes"
+    },
+    "Password": {
+      "TotalMatch": 2,
+      "MatchPercent": 0.4,
+      "RelatedInfo": "Contraseñas coincidentes"
+    },
+    "Bets": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Apuestas coincidentes"
+    },
+    "Hours": {
+      "TotalMatch": 1,
+      "MatchPercent": 0.2,
+      "RelatedInfo": "Horas de conexión coincidentes"
+    }
+  }
+]

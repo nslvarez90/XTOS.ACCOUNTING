@@ -1,0 +1,287 @@
+﻿@page "/duplicateAccounts"
+
+@using MudBlazor
+@using ACCOUNTING.CORE.Models
+@inject IDialogService DialogService
+
+<MudPaper Class="d-flex justify-space-between flex-grow-1 gap-4 mt-5 p-4" Elevation="0">
+    <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+        <MudButton StartIcon="@Icons.Material.Filled.CloudCircle" IconColor="Color.Warning" @onclick="OpenDialogSoftClosed">Soft Closed</MudButton>
+        <MudButton StartIcon="@Icons.Material.Filled.Hardware" IconColor="Color.Error" @onclick="OpenDialogHardClosed">Hard Closed</MudButton>
+        <MudButton StartIcon="@Icons.Material.Filled.CheckCircle" IconColor="Color.Info" @onclick="OpenDialogEnabled">Enable</MudButton>
+    </MudButtonGroup>
+    <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+        <MudButton StartIcon="@Icons.Material.Filled.ManageAccounts" IconColor="Color.Warning" @onclick="OpenDialogDuplicate">
+            Duplicate Accounts
+        </MudButton>
+        <MudButton StartIcon="@Icons.Material.Filled.RestoreFromTrash" IconColor="Color.Success">
+            Active Player Decrease
+        </MudButton>
+    </MudButtonGroup>
+</MudPaper>
+<MudTabs Elevation="0" Rounded="true" ApplyEffectsToContainer="true" Class="p-4">
+
+    <MudTabPanel Text="Active Agents">
+        <MudPaper Class="d-flex justify-content-start flex-grow-1 gap-4 mt-5 p-4" Elevation="0">
+            <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+                <MudButton>@_buttonText</MudButton>
+                <MudMenu Icon="@Icons.Material.Filled.ArrowDropDown" Style="align-self: auto;">
+                    <MudMenuItem OnClick="() => SetButtonTextAsync(0)">4 weeks</MudMenuItem>
+                    <MudMenuItem OnClick="() => SetButtonTextAsync(1)">8 weeks</MudMenuItem>
+                </MudMenu>
+            </MudButtonGroup>
+            <MudItem sm="12" md="2" Class="d-flex justify-center align-center my-auto">
+                <MudCheckBox @bind-Value="payments" Color="Color.Success">No payments</MudCheckBox>
+            </MudItem>
+        </MudPaper>
+        <MudDataGrid T="AgentInfoDTO" MultiSelection="true" Items="@agents" SortMode="@SortMode.Multiple" HorizontalScrollbar="true" QuickFilter="@QuickFilterEnabledAgents">
+            <ToolBarContent>
+                <MudText Typo="Typo.h6">Active Agents</MudText>
+                <MudSpacer />
+                <MudTextField @bind-Value="_searchStringEnabled" Placeholder="Search" Adornment="Adornment.Start" Immediate="true"
+                AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <Columns>
+                <PropertyColumn Property="x => x.IdAgent" Title="Id" />
+                <PropertyColumn Property="x => x.AgentName" Title="Agent" />
+                <PropertyColumn Property="x => x.Fee" Format="P2" Title="Fee %" />
+                <PropertyColumn Property="x => x.Balance" Title="New Balance" />
+                @for (@index = 0; @index <= @totalToShow; index++)
+                {
+                    var iterator = index;
+                    var total = totalToShow;
+                    var name = (total == 3 && iterator > 3) ? "d-none" : "";
+                    <TemplateColumn Class="@(name.ToString())">
+                        <HeaderTemplate>
+                            <div class="row">
+                                <div class="col-12">
+                                    <MudText Class="text-center" Typo="Typo.body2"> Week @(iterator + 1) </MudText>
+                                </div>
+                                <MudDivider Vertical="true" FlexItem="true" />
+                                <div class="col-4">
+                                    <MudText Typo="Typo.body2">Act. Player</MudText>
+                                </div>
+                                <div class="col-4">
+                                    <MudText Typo="Typo.body2">Payment</MudText>
+                                </div>
+                                <div class="col-4">
+                                    <MudText Typo="Typo.body2">Charge</MudText>
+                                </div>
+                            </div>
+                        </HeaderTemplate>
+                        <CellTemplate>
+                            <MudStack Class="w-100 p-0" Row>
+                                <div class="row w-100">
+                                    <div class="col-4">
+                                        <MudText Class="text-center" Typo="Typo.body2">@context.Item.WeeksInfo.ElementAt(iterator).ActivePlayer </MudText>
+                                    </div>
+                                    <div class="col-4">
+
+                                        <MudText Class="text-center" Typo="Typo.body2">@context.Item.WeeksInfo.ElementAt(iterator).Payment</MudText>
+                                    </div>
+                                    <div class="col-4">
+                                        <MudText Class="text-center" Typo="Typo.body2">@context.Item.WeeksInfo.ElementAt(iterator).Charge</MudText>
+                                    </div>
+                                </div>
+                            </MudStack>
+                        </CellTemplate>
+                    </TemplateColumn>
+                    if (total == 3 && iterator==total)
+                    {
+                        <PropertyColumn Class="threeWeeks" StickyRight="true" Property="x => x.TotalPayment" Title="Total Payment" />
+                        <PropertyColumn Class="threeWeeks" StickyRight="true" Property="x => x.BalancePeriod" Title="Balance Period" />
+
+                    }
+                else if (total == 7 && iterator == total)
+                    {
+                        <PropertyColumn Class="eightWeeks" StickyRight="true" Property="x => x.TotalPayment" Title="Total Payment" />
+                        <PropertyColumn Class="eightWeeks" StickyRight="true" Property="x => x.BalancePeriod" Title="Balance Period" />
+                    }
+
+                }
+                
+            </Columns>
+
+            <PagerContent>
+                <MudDataGridPager T="AgentInfoDTO" />
+            </PagerContent>
+        </MudDataGrid>
+    </MudTabPanel>
+    <MudTabPanel Text="Inactive Agents">
+        <MudPaper Class="d-flex justify-content-start flex-grow-1 gap-4 mt-5 p-4" Elevation="0">
+            <MudItem sm="12" md="2">
+                <MudRadioGroup @bind-Value="totalToShow" Class="d-flex flex-column">
+                    <MudRadio Color="Color.Info" Value="4">Last 4 weeks</MudRadio>
+                    <MudRadio Color="Color.Secondary" Value="8">Last 8 weeks</MudRadio>
+                </MudRadioGroup>
+            </MudItem>
+            <MudItem sm="12" md="2" Class="d-flex justify-center align-center my-auto">
+                <MudCheckBox @bind-Value="payments" Color="Color.Success">No payments</MudCheckBox>
+            </MudItem>
+        </MudPaper>
+        <MudDataGrid T="Employee" MultiSelection="true" Items="@employees" SortMode="@SortMode.Multiple" Filterable="true" QuickFilter="@QuickFilter">
+            <ToolBarContent>
+                <MudText Typo="Typo.h6">Inactive Agents</MudText>
+                <MudSpacer />
+                <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Immediate="true"
+                              AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <Columns>
+                <PropertyColumn Property="x => x.MainAgent" Title="Agent" />
+                <PropertyColumn Property="x => x.DuplicateAgent" Title="Duplicate Agent" />.
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <div class="row">
+                            <div class="col-12">
+                                <MudText Class="text-center" Typo="Typo.body2">Week 1</MudText>
+                            </div>
+                            <MudDivider Vertical="true" FlexItem="true" />
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Act. Player</MudText>
+                            </div>
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Payment</MudText>
+                            </div>
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Charge</MudText>
+                            </div>
+                        </div>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Class="w-100 p-0" Row>
+                            <div class="row w-100">
+                                <div class="col-4">
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks.ActivePlayer</MudText>
+                                </div>
+                                <div class="col-4">
+
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks.Payment</MudText>
+                                </div>
+                                <div class="col-4">
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks.Charge</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <div class="row">
+                            <div class="col-12">
+                                <MudText Class="text-center" Typo="Typo.body2">Week 2</MudText>
+                            </div>
+                            <MudDivider Vertical="true" FlexItem="true" />
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Act. Player</MudText>
+                            </div>
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Payment</MudText>
+                            </div>
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Charge</MudText>
+                            </div>
+                        </div>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Class="w-100 p-0" Row>
+                            <div class="row w-100">
+                                <div class="col-4">
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks2.ActivePlayer</MudText>
+                                </div>
+                                <div class="col-4">
+
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks2.Payment</MudText>
+                                </div>
+                                <div class="col-4">
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks2.Charge</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <div class="row">
+                            <div class="col-12">
+                                <MudText Class="text-center" Typo="Typo.body2">Week 3</MudText>
+                            </div>
+                            <MudDivider Vertical="true" FlexItem="true" />
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Act. Player</MudText>
+                            </div>
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Payment</MudText>
+                            </div>
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Charge</MudText>
+                            </div>
+                        </div>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Class="w-100 p-0" Row>
+                            <div class="row w-100">
+                                <div class="col-4">
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks3.ActivePlayer</MudText>
+                                </div>
+                                <div class="col-4">
+
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks3.Payment</MudText>
+                                </div>
+                                <div class="col-4">
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks3.Charge</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <div class="row">
+                            <div class="col-12">
+                                <MudText Class="text-center" Typo="Typo.body2">Week 4</MudText>
+                            </div>
+                            <MudDivider Vertical="true" FlexItem="true" />
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Act. Player</MudText>
+                            </div>
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Payment</MudText>
+                            </div>
+                            <div class="col-4">
+                                <MudText Typo="Typo.body2">Charge</MudText>
+                            </div>
+                        </div>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Class="w-100 p-0" Row>
+                            <div class="row w-100">
+                                <div class="col-4">
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks4.ActivePlayer</MudText>
+                                </div>
+                                <div class="col-4">
+
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks4.Payment</MudText>
+                                </div>
+                                <div class="col-4">
+                                    <MudText Class="text-center" Typo="Typo.body2">@context.Item.Weeks4.Charge</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <PropertyColumn Property="x => x.Percent" Format="P2" Title="Percent" />
+                <PropertyColumn Property="x => x.IPs" Title="Match IPs" />
+                <TemplateColumn CellClass="d-flex justify-end" Title="Actions">
+                    <CellTemplate>
+                        <MudStack Row>
+                            <MudButton Size="@Size.Small" Variant="@Variant.Filled" Color="@Color.Primary" StartIcon="@Icons.Material.Filled.Info">Info</MudButton>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="Employee" />
+            </PagerContent>
+        </MudDataGrid>
+    </MudTabPanel>
+</MudTabs>

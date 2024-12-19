@@ -1,0 +1,31 @@
+﻿@using MudBlazor
+@inject ISnackbar Snackbar
+@using ACCOUNTING.CORE.Models
+
+<MudDialog>
+    <DialogContent>
+        
+        <MudDataGrid T="AgentCloseDTO" MultiSelection="true" Items="@agentsToClose" SortMode="@SortMode.Multiple" Filterable="true" QuickFilter="@QuickFilter" SelectedItemsChanged="@SelectedItemsChanged">
+            <ToolBarContent>
+                <MudButton StartIcon="@icon" IconColor="@color">@action</MudButton>
+                <MudSpacer />
+                <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Immediate="true"
+                              AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <Columns>
+                <SelectColumn T="AgentCloseDTO" />
+                <PropertyColumn Property="x => x.IdAgent" Title="Id" />
+                <PropertyColumn Property="x => x.AgentName" Title="Agent Name" />
+                <PropertyColumn Property="x => x.RootDGS" Title="RootDGS" />
+                <PropertyColumn Property="x => x.SubAgents" Title="SubAgents" />
+                <PropertyColumn Property="x => x.Balance" Title="Balance" />
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="AgentCloseDTO" />
+            </PagerContent>
+        </MudDataGrid>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Primary" OnClick="Close">Ok</MudButton>
+    </DialogActions>
+</MudDialog>

@@ -1,0 +1,72 @@
+[
+  {
+    "IdAgent": 1,
+    "AgentName": "Agente 1",
+    "RootDGS": "DGS-001",
+    "SubAgents": [ "SubAgente 1", "SubAgente 2" ],
+    "Balance": 100.50
+  },
+  {
+    "IdAgent": 2,
+    "AgentName": "Agente 2",
+    "RootDGS": "DGS-002",
+    "SubAgents": [ "SubAgente 3", "SubAgente 4" ],
+    "Balance": 200.25
+  },
+  {
+    "IdAgent": 3,
+    "AgentName": "Agente 3",
+    "RootDGS": "DGS-003",
+    "SubAgents": [ "SubAgente 5" ],
+    "Balance": 50.10
+  },
+  {
+    "IdAgent": 4,
+    "AgentName": "Agente 4",
+    "RootDGS": "DGS-004",
+    "SubAgents": [ "SubAgente 6", "SubAgente 7" ],
+    "Balance": 300.50
+  },
+  {
+    "IdAgent": 5,
+    "AgentName": "Agente 5",
+    "RootDGS": "DGS-005",
+    "SubAgents": [ "SubAgente 8" ],
+    "Balance": 150.20
+  },
+  {
+    "IdAgent": 6,
+    "AgentName": "Agente 6",
+    "RootDGS": "DGS-006",
+    "SubAgents": [ "SubAgente 9", "SubAgente 10" ],
+    "Balance": 250.30
+  },
+  {
+    "IdAgent": 7,
+    "AgentName": "Agente 7",
+    "RootDGS": "DGS-007",
+    "SubAgents": [ "SubAgente 11" ],
+    "Balance": 400.40
+  },
+  {
+    "IdAgent": 8,
+    "AgentName": "Agente 8",
+    "RootDGS": "DGS-008",
+    "SubAgents": [ "SubAgente 12", "SubAgente 13" ],
+    "Balance": 100.10
+  },
+  {
+    "IdAgent": 9,
+    "AgentName": "Agente 9",
+    "RootDGS": "DGS-009",
+    "SubAgents": [ "SubAgente 14" ],
+    "Balance": 200.50
+  },
+  {
+    "IdAgent": 10,
+    "AgentName": "Agente 10",
+    "RootDGS": "DGS-010",
+    "SubAgents": [ "SubAgente 15", "SubAgente 16" ],
+    "Balance": 500.60
+  }
+]

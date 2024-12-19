@@ -1,0 +1,202 @@
+[
+  {
+    "IdAgent": 1,
+    "AgentName": "Juan Pérez",
+    "Fee": 0.15,
+    "Balance": 1000.50,
+    "WeeksInfo": [
+      {
+        "ActivePlayer": 10,
+        "Charge": 50,
+        "Payment": 20
+      },
+      {
+        "ActivePlayer": 12,
+        "Charge": 60,
+        "Payment": 25
+      },
+      {
+        "ActivePlayer": 15,
+        "Charge": 75,
+        "Payment": 30
+      },
+      {
+        "ActivePlayer": 18,
+        "Charge": 90,
+        "Payment": 35
+      },
+      {
+        "ActivePlayer": 20,
+        "Charge": 100,
+        "Payment": 40
+      },
+      {
+        "ActivePlayer": 22,
+        "Charge": 110,
+        "Payment": 45
+      },
+      {
+        "ActivePlayer": 25,
+        "Charge": 125,
+        "Payment": 50
+      },
+      {
+        "ActivePlayer": 28,
+        "Charge": 140,
+        "Payment": 55
+      }
+    ],
+    "TotalPayment": 500.20,
+    "BalancePeriod": 800.30
+  },
+  {
+    "IdAgent": 2,
+    "AgentName": "María Rodríguez",
+    "Fee": 0.12,
+    "Balance": 800.20,
+    "WeeksInfo": [
+      {
+        "ActivePlayer": 8,
+        "Charge": 40,
+        "Payment": 20
+      },
+      {
+        "ActivePlayer": 10,
+        "Charge": 50,
+        "Payment": 25
+      },
+      {
+        "ActivePlayer": 12,
+        "Charge": 60,
+        "Payment": 30
+      },
+      {
+        "ActivePlayer": 15,
+        "Charge": 75,
+        "Payment": 35
+      },
+      {
+        "ActivePlayer": 18,
+        "Charge": 90,
+        "Payment": 40
+      },
+      {
+        "ActivePlayer": 20,
+        "Charge": 100,
+        "Payment": 45
+      },
+      {
+        "ActivePlayer": 22,
+        "Charge": 110,
+        "Payment": 50
+      },
+      {
+        "ActivePlayer": 25,
+        "Charge": 125,
+        "Payment": 55
+      }
+    ],
+    "TotalPayment": 400.10,
+    "BalancePeriod": 600.40
+  },
+  {
+    "IdAgent": 3,
+    "AgentName": "Luis García",
+    "Fee": 0.18,
+    "Balance": 1200.80,
+    "WeeksInfo": [
+      {
+        "ActivePlayer": 12,
+        "Charge": 60,
+        "Payment": 25
+      },
+      {
+        "ActivePlayer": 15,
+        "Charge": 75,
+        "Payment": 30
+      },
+      {
+        "ActivePlayer": 18,
+        "Charge": 90,
+        "Payment": 35
+      },
+      {
+        "ActivePlayer": 20,
+        "Charge": 100,
+        "Payment": 40
+      },
+      {
+        "ActivePlayer": 22,
+        "Charge": 110,
+        "Payment": 45
+      },
+      {
+        "ActivePlayer": 25,
+        "Charge": 125,
+        "Payment": 50
+      },
+      {
+        "ActivePlayer": 28,
+        "Charge": 140,
+        "Payment": 55
+      },
+      {
+        "ActivePlayer": 30,
+        "Charge": 150,
+        "Payment": 60
+      }
+    ],
+    "TotalPayment": 600.30,
+    "BalancePeriod": 900.50
+  },
+  {
+    "IdAgent": 100,
+    "AgentName": "Sofía González",
+    "Fee": 0.15,
+    "Balance": 1000.50,
+    "WeeksInfo": [
+      {
+        "ActivePlayer": 10,
+        "Charge": 50,
+        "Payment": 20
+      },
+      {
+        "ActivePlayer": 12,
+        "Charge": 60,
+        "Payment": 25
+      },
+      {
+        "ActivePlayer": 15,
+        "Charge": 75,
+        "Payment": 30
+      },
+      {
+        "ActivePlayer": 18,
+        "Charge": 90,
+        "Payment": 35
+      },
+      {
+        "ActivePlayer": 20,
+        "Charge": 100,
+        "Payment": 40
+      },
+      {
+        "ActivePlayer": 22,
+        "Charge": 110,
+        "Payment": 45
+      },
+      {
+        "ActivePlayer": 25,
+        "Charge": 125,
+        "Payment": 50
+      },
+      {
+        "ActivePlayer": 28,
+        "Charge": 140,
+        "Payment": 55
+      }
+    ],
+    "TotalPayment": 500.20,
+    "BalancePeriod": 800.30
+  }
+]

@@ -1,0 +1,18 @@
+﻿@page "/managementAccounts"
+
+@using MudBlazor
+<MudDataGrid Items="@employees" Filterable="false" SortMode="@SortMode.None" Groupable="false">
+    <Columns>
+        <PropertyColumn Property="x => x.MainAgent" Title="Agent" />
+        <PropertyColumn Property="x => x.DuplicateAgent" Title="Duplicate Agent" />
+        <PropertyColumn Property="x => x.Percent" Format="P2" Title="Percent" />
+        <PropertyColumn Property="x => x.IPs" Title="Match IPs" />
+        <TemplateColumn CellClass="d-flex justify-end" Title="Actions">
+            <CellTemplate>
+                <MudStack Row>
+                    <MudButton Size="@Size.Small" Variant="@Variant.Filled" Color="@Color.Primary" StartIcon="@Icons.Material.Filled.Info">Info</MudButton>
+                </MudStack>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>

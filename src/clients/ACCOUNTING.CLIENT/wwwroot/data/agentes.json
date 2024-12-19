@@ -1,0 +1,123 @@
+[
+  {
+    "IdAgent": 1,
+    "AgentName": "Juan",
+    "Fee": 0.15,
+    "Balance": 1000.5,
+    "WeeksInfo": [
+      {
+        "ActivePlayer": 10,
+        "Charge": 50,
+        "Payment": 20
+      },
+      {
+        "ActivePlayer": 12,
+        "Charge": 60,
+        "Payment": 25
+      },
+      {
+        "ActivePlayer": 15,
+        "Charge": 75,
+        "Payment": 30
+      },
+      {
+        "ActivePlayer": 18,
+        "Charge": 90,
+        "Payment": 35
+      }
+    ],
+    "TotalPayment": 500.2,
+    "BalancePeriod": 800.3
+  },
+  {
+    "IdAgent": 2,
+    "AgentName": "pepe",
+    "Fee": 0.85,
+    "Balance": 500.5,
+    "WeeksInfo": [
+      {
+        "ActivePlayer": 50,
+        "Charge": 150,
+        "Payment": 220
+      },
+      {
+        "ActivePlayer": 45,
+        "Charge": 60,
+        "Payment": 50
+      },
+      {
+        "ActivePlayer": 60,
+        "Charge": 80,
+        "Payment": 150
+      },
+      {
+        "ActivePlayer": 50,
+        "Charge": 45,
+        "Payment": 45
+      }
+    ],
+    "TotalPayment": 1500.2,
+    "BalancePeriod": 1800.3
+  },
+  {
+    "IdAgent": 3,
+    "AgentName": "ramon",
+    "Fee": 0.85,
+    "Balance": 500.5,
+    "WeeksInfo": [
+      {
+        "ActivePlayer": 50,
+        "Charge": 150,
+        "Payment": 220
+      },
+      {
+        "ActivePlayer": 45,
+        "Charge": 60,
+        "Payment": 50
+      },
+      {
+        "ActivePlayer": 60,
+        "Charge": 80,
+        "Payment": 150
+      },
+      {
+        "ActivePlayer": 50,
+        "Charge": 45,
+        "Payment": 45
+      }
+    ],
+    "TotalPayment": 1500.2,
+    "BalancePeriod": 1800.3
+  },
+  {
+    "IdAgent": 4,
+    "AgentName": "popy",
+    "Fee": 0.85,
+    "Balance": 500.5,
+    "WeeksInfo": [
+      {
+        "ActivePlayer": 50,
+        "Charge": 150,
+        "Payment": 220
+      },
+      {
+        "ActivePlayer": 45,
+        "Charge": 60,
+        "Payment": 50
+      },
+      {
+        "ActivePlayer": 60,
+        "Charge": 80,
+        "Payment": 150
+      },
+      {
+        "ActivePlayer": 50,
+        "Charge": 45,
+        "Payment": 45
+      }
+    ],
+    "TotalPayment": 1500.2,
+    "BalancePeriod": 1800.3
+  }
+
+]
