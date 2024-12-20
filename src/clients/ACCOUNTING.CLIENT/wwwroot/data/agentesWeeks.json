@@ -1,0 +1,317 @@
+[
+  {
+    "IdAgent": 1,
+    "AgentName": "Agente 1",
+    "PlayerTotal": 100,
+    "Week1": {
+      "PlayerTotal": 20,
+      "PercentRepresentative": 0.2
+    },
+    "Week2": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.3
+    },
+    "Week3": {
+      "PlayerTotal": 25,
+      "PercentRepresentative": 0.25
+    },
+    "Week4": {
+      "PlayerTotal": 25,
+      "PercentRepresentative": 0.25
+    }
+  },
+  {
+    "IdAgent": 2,
+    "AgentName": "Agente 2",
+    "PlayerTotal": 150,
+    "Week1": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.2
+    },
+    "Week2": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.27
+    },
+    "Week3": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.23
+    },
+    "Week4": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.3
+    }
+  },
+  {
+    "IdAgent": 3,
+    "AgentName": "Agente 3",
+    "PlayerTotal": 120,
+    "Week1": {
+      "PlayerTotal": 25,
+      "PercentRepresentative": 0.21
+    },
+    "Week2": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.29
+    },
+    "Week3": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.25
+    },
+    "Week4": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.25
+    }
+  },
+  {
+    "IdAgent": 4,
+    "AgentName": "Agente 4",
+    "PlayerTotal": 180,
+    "Week1": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.19
+    },
+    "Week2": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.25
+    },
+    "Week3": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.22
+    },
+    "Week4": {
+      "PlayerTotal": 60,
+      "PercentRepresentative": 0.33
+    }
+  },
+  {
+    "IdAgent": 5,
+    "AgentName": "Agente 5",
+    "PlayerTotal": 200,
+    "Week1": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.2
+    },
+    "Week2": {
+      "PlayerTotal": 50,
+      "PercentRepresentative": 0.25
+    },
+    "Week3": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.23
+    },
+    "Week4": {
+      "PlayerTotal": 65,
+      "PercentRepresentative": 0.33
+    }
+  },
+  {
+    "IdAgent": 6,
+    "AgentName": "Agente 6",
+    "PlayerTotal": 150,
+    "Week1": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.2
+    },
+    "Week2": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.27
+    },
+    "Week3": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.23
+    },
+    "Week4": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.3
+    }
+  },
+  {
+    "IdAgent": 7,
+    "AgentName": "Agente 7",
+    "PlayerTotal": 120,
+    "Week1": {
+      "PlayerTotal": 25,
+      "PercentRepresentative": 0.21
+    },
+    "Week2": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.29
+    },
+    "Week3": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.25
+    },
+    "Week4": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.25
+    }
+  },
+  {
+    "IdAgent": 8,
+    "AgentName": "Agente 8",
+    "PlayerTotal": 180,
+    "Week1": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.19
+    },
+    "Week2": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.25
+    },
+    "Week3": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.22
+    },
+    "Week4": {
+      "PlayerTotal": 60,
+      "PercentRepresentative": 0.33
+    }
+  },
+  {
+    "IdAgent": 9,
+    "AgentName": "Agente 9",
+    "PlayerTotal": 200,
+    "Week1": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.2
+    },
+    "Week2": {
+      "PlayerTotal": 50,
+      "PercentRepresentative": 0.25
+    },
+    "Week3": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.23
+    },
+    "Week4": {
+      "PlayerTotal": 65,
+      "PercentRepresentative": 0.33
+    }
+  },
+  {
+    "IdAgent": 10,
+    "AgentName": "Agente 10",
+    "PlayerTotal": 150,
+    "Week1": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.2
+    },
+    "Week2": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.27
+    },
+    "Week3": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.23
+    },
+    "Week4": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.3
+    }
+  },
+  {
+    "IdAgent": 11,
+    "AgentName": "Agente 11",
+    "PlayerTotal": 120,
+    "Week1": {
+      "PlayerTotal": 25,
+      "PercentRepresentative": 0.21
+    },
+    "Week2": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.29
+    },
+    "Week3": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.25
+    },
+    "Week4": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.25
+    }
+  },
+  {
+    "IdAgent": 12,
+    "AgentName": "Agente 12",
+    "PlayerTotal": 180,
+    "Week1": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.19
+    },
+    "Week2": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.25
+    },
+    "Week3": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.22
+    },
+    "Week4": {
+      "PlayerTotal": 60,
+      "PercentRepresentative": 0.33
+    }
+  },
+  {
+    "IdAgent": 13,
+    "AgentName": "Agente 13",
+    "PlayerTotal": 200,
+    "Week1": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.2
+    },
+    "Week2": {
+      "PlayerTotal": 50,
+      "PercentRepresentative": 0.25
+    },
+    "Week3": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.23
+    },
+    "Week4": {
+      "PlayerTotal": 65,
+      "PercentRepresentative": 0.33
+    }
+  },
+  {
+    "IdAgent": 14,
+    "AgentName": "Agente 14",
+    "PlayerTotal": 150,
+    "Week1": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.2
+    },
+    "Week2": {
+      "PlayerTotal": 40,
+      "PercentRepresentative": 0.27
+    },
+    "Week3": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.23
+    },
+    "Week4": {
+      "PlayerTotal": 45,
+      "PercentRepresentative": 0.3
+    }
+  },
+  {
+    "IdAgent": 15,
+    "AgentName": "Agente 15",
+    "PlayerTotal": 120,
+    "Week1": {
+      "PlayerTotal": 25,
+      "PercentRepresentative": 0.21
+    },
+    "Week2": {
+      "PlayerTotal": 35,
+      "PercentRepresentative": 0.29
+    },
+    "Week3": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.25
+    },
+    "Week4": {
+      "PlayerTotal": 30,
+      "PercentRepresentative": 0.25
+    }
+  }
+]
