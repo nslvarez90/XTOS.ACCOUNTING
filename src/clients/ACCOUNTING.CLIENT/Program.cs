@@ -10,7 +10,15 @@ namespace ACCOUNTING.CLIENT
     {
         public static async Task Main(string[] args)
         {
+
+            var builderConfig = new ConfigurationBuilder().AddJsonFile("AppSettings.json", false, false);
+            var settings = builderConfig.Build();
+
+
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+            
+
             builder.RootComponents.Add<App>("#app");
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
@@ -21,6 +29,7 @@ namespace ACCOUNTING.CLIENT
             builder.Services.AddTransient<IAgentInfoService,AgentInfoService>();
             builder.Services.AddTransient<IAgentCloseService,AgentCloseService>();
             builder.Services.AddTransient<IAgentDuplicateService, AgentDuplicateService>();
+            builder.Services.AddTransient<IAgentWeeksService, AgentWeeksService>();
             await builder.Build().RunAsync();
         }
     }

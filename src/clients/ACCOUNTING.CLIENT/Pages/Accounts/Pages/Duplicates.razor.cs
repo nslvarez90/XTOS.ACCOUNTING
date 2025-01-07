@@ -162,7 +162,11 @@ namespace ACCOUNTING.CLIENT.Pages.Accounts.Pages
             return await DialogService.ShowAsync<DuplicateDialog>("Duplicate Accounts", options);
         }
 
-        
+        private async Task<IDialogReference> OpenDialogDecreased() 
+        {
+            var options = new DialogOptions { CloseOnEscapeKey = false, BackdropClick = false, MaxWidth = MaxWidth.Large, FullWidth = true };
+            return await DialogService.ShowAsync<ActivePlayerDialog>("Active Player Decrease", options);
+        }
         public async void OpenOverlay()
         {
             visible = true;

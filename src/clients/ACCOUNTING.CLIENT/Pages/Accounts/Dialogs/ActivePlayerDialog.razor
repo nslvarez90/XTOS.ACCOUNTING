@@ -1,0 +1,95 @@
+﻿@using MudBlazor
+@inject ISnackbar Snackbar
+@using ACCOUNTING.CORE.Models
+
+<MudDialog>
+    <DialogContent>
+
+        <MudDataGrid T="AgentWeeksDTO" FixedHeader HorizontalScrollbar="true" MultiSelection="true" Items="@playersWeeks" SortMode="@SortMode.Multiple" Filterable="true" QuickFilter="@QuickFilter" SelectedItemsChanged="@SelectedItemsChanged" Class="w-100">
+            <ToolBarContent>
+                <MudSpacer />
+                <MudTextField @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Immediate="true"
+                              AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            </ToolBarContent>
+            <Columns>
+                <SelectColumn T="DuplicateInfoDTO" />
+                <PropertyColumn Property="x => x.AgentName" Title=" Agent" />
+                <PropertyColumn Property="x => x.PlayerTotal" Title="PlayerTotal" />
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <MudText Class="text-center" Typo="Typo.body2"> Week 1 </MudText>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Style="width: 180px;" Row>
+                            <div class="row w-100 ">
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Week1.PlayerTotal}")  </MudText>
+                                </div>
+                                <div class="col-6  d-flex d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Week1.PercentRepresentative} %")</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <MudText Class="text-center" Typo="Typo.body2"> Week 2 </MudText>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Style="width: 180px;" Row>
+                            <div class="row w-100 ">
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Week2.PlayerTotal}")  </MudText>
+                                </div>
+                                <div class="col-6  d-flex d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Week2.PercentRepresentative} %")</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <MudText Class="text-center" Typo="Typo.body2"> Week 3 </MudText>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Style="width: 180px;" Row>
+                            <div class="row w-100 ">
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Week3.PlayerTotal}")  </MudText>
+                                </div>
+                                <div class="col-6  d-flex d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Week3.PercentRepresentative} %")</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+                <TemplateColumn>
+                    <HeaderTemplate>
+                        <MudText Class="text-center" Typo="Typo.body2"> Week 1 </MudText>
+                    </HeaderTemplate>
+                    <CellTemplate>
+                        <MudStack Style="width: 180px;" Row>
+                            <div class="row w-100 ">
+                                <div class="col-6 d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Week4.PlayerTotal}")  </MudText>
+                                </div>
+                                <div class="col-6  d-flex d-flex align-items-center justify-content-between">
+                                    <MudText Class="text-center" Typo="Typo.body2">@($"{@context.Item.Week4.PercentRepresentative} %")</MudText>
+                                </div>
+                            </div>
+                        </MudStack>
+                    </CellTemplate>
+                </TemplateColumn>
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="AgentWeeksDTO" />
+            </PagerContent>
+        </MudDataGrid>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Primary" OnClick="Close">Ok</MudButton>
+    </DialogActions>
+</MudDialog>

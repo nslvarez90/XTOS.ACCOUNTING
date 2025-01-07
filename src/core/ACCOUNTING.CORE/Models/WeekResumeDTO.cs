@@ -11,5 +11,10 @@ namespace ACCOUNTING.CORE.Models
         public uint PlayerTotal { set; get; }
 
         public double PercentRepresentative { set; get;}
+
+        public override string ToString()
+        {
+            return $"{PlayerTotal.ToString()}, {PercentRepresentative.ToString()}";
+        }
     }
 }
